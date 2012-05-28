@@ -5,6 +5,7 @@ filetype plugin on
 filetype indent on
 
 " Load plugins
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
