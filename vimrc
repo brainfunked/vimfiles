@@ -14,7 +14,7 @@ call pathogen#helptags()
 " Theme/Colours
 syntax on
 set background=dark
-colorscheme vividchalk
+colorscheme solarized
 
 " Vim UI
 set number
