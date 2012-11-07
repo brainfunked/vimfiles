@@ -53,7 +53,6 @@ set grepprg=grep\ -nH\ $*
 " Tab completion
 set wildmode=list:longest,list:full
 set complete=.,w,t
-imap <Tab> <C-P>
 
 " Spell check plugin for vim 7
 "setlocal spell spelllang=en_gb
