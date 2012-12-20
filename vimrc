@@ -59,6 +59,9 @@ set complete=.,w,t
 "setlocal spell spelllang=en_gb
 "setlocal spell encoding=utf-8
 
+" Python
+au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
 " Configuration for various plugins
 " http://vim.wikia.com/wiki/Using_vim_as_an_IDE_all_in_one
 " --------------------
