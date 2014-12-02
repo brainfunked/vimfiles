@@ -148,5 +148,5 @@ map <leader>o :BufExplorer<cr>
 " " -------------------
 " " NERDTree
 " " -------------------
-let NERDTreeIgnore=['\.vim$', '\~$[[file]]', '^\.git$[[dir]]', '^vendor$[[dir]]', '\.pyc$[[file]]']
+let NERDTreeIgnore=['\.vim$', '\~$[[file]]', '^\.git$[[dir]]', '^vendor$[[dir]]', '\.pyc$[[file]]', '\.swp$']
 let NERDTreeShowHidden=1
