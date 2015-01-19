@@ -82,3 +82,9 @@
 [submodule "bundle/vim-asciidoc"]
 	path = bundle/vim-asciidoc
 	url = https://github.com/gavinheavyside/vim-asciidoc
+[submodule "bundle/vim-puppet"]
+	path = bundle/vim-puppet
+	url = https://github.com/rodjek/vim-puppet.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
