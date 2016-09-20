@@ -58,6 +58,10 @@ set complete=.,w,t
 " Spell check plugin for vim 7
 "setlocal spell spelllang=en_gb
 "setlocal spell encoding=utf-8
+au FileType markdown setlocal spell spelllang=en_gb
+au FileType asciidoc setlocal spell spelllang=en_gb
+au BufRead, BufNewFile *.md setlocal spell spelllang=en_gb
+au BufRead, BufNewFile *.adoc setlocal spell spelllang=en_gb
 
 " Python
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
