@@ -63,6 +63,9 @@ au FileType asciidoc setlocal spell spelllang=en_gb
 au BufRead, BufNewFile *.md setlocal spell spelllang=en_gb
 au BufRead, BufNewFile *.adoc setlocal spell spelllang=en_gb
 
+" Force vertical diff mode
+set diffopt+=vertical
+
 " Python
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
