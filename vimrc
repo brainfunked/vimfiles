@@ -97,6 +97,10 @@ map <leader>o :BufExplorer<cr>
 " " -------------------
 let NERDTreeIgnore=['\.vim$', '\~$[[file]]', '^\.git$[[dir]]', '^vendor$[[dir]]', '\.pyc$[[file]]', '\.swp$']
 let NERDTreeShowHidden=1
+" Open NERDTree when no files are specified on startup
+" (https://github.com/scrooloose/nerdtree/blob/master/README.markdown)
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " " -------------------
 " " fzf
