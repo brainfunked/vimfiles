@@ -85,37 +85,6 @@ highlight ShowMarksHLo gui=bold guibg=LightYellow guifg=DarkYellow
 " For multiple marks on the same line.
 highlight ShowMarksHLm gui=bold guibg=LightGreen guifg=DarkGreen
 
-" --------------------
-" TagList
-" --------------------
-" F4: Switch on/off TagList
-nnoremap <silent> <F4> :TlistToggle<CR>
-" TagListTagName - Used for tag names
-highlight MyTagListTagName gui=bold guifg=Black guibg=Orange
-" TagListTagScope - Used for tag scope
-highlight MyTagListTagScope gui=NONE guifg=Blue
-" TagListTitle - Used for tag titles
-highlight MyTagListTitle gui=bold guifg=DarkRed guibg=LightGray
-" TagListComment - Used for comments
-highlight MyTagListComment guifg=DarkGreen
-" TagListFileName - Used for filenames
-highlight MyTagListFileName gui=bold guifg=Black guibg=LightBlue
-"let Tlist_Ctags_Cmd = $VIM.'/vimfiles/ctags.exe' " location of ctags tool
-let Tlist_Show_One_File = 1 " Displaying tags for only one file~
-let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill yourself
-let Tlist_Use_Right_Window = 1 " split to the right side of the screen
-let Tlist_Sort_Type = "name" " sort by order or name
-let Tlist_Display_Prototype = 0 " do not show prototypes and not tags in the taglist window.
-let Tlist_Compart_Format = 1 " Remove extra information and blank lines from the taglist window.
-let Tlist_GainFocus_On_ToggleOpen = 1 " Jump to taglist window on open.
-let Tlist_Display_Tag_Scope = 1 " Show tag scope next to the tag name.
-let Tlist_Close_On_Select = 0 " Close the taglist window when a file or tag is selected.
-let Tlist_Enable_Fold_Column = 1 " Don't Show the fold indicator column in the taglist window.
-let Tlist_WinWidth = 40
-" let Tlist_Ctags_Cmd = 'ctags --c++-kinds=+p --fields=+iaS --extra=+q --languages=c++'
-" very slow, so I disable this
-" let Tlist_Process_File_Always = 1 " To use the :TlistShowTag and the :TlistShowPrototype commands without the taglist window and the taglist menu, you should set this variable to 1.
-":TlistShowPrototype [filename] [linenumber]
 
 " " --------------------
 " " MiniBufExpl
@@ -138,14 +107,6 @@ let Tlist_WinWidth = 40
 " highlight MBEVisibleChanged term=bold cterm=bold gui=bold guibg=DarkRed guifg=Black
 
 " " -------------------
-" " FuzzyFinder
-" " -------------------
-nmap ,f :FufTag<CR>
-nmap ,b :FufBuffer<CR>
-nmap ,t :FufTaggedFile<CR>
-map <F8> :!/usr/bin/ctags -R --ruby-kinds=+cfmF --perl-kinds=+cflpsd --fields=+iaS --extra=+f --exclude=@$HOME/.ctags_ignore .<CR>
-
-" " -------------------
 " " BufExplorer
 " " -------------------
 let g:bufExplorerDefaultHelp=0
@@ -157,3 +118,51 @@ map <leader>o :BufExplorer<cr>
 " " -------------------
 let NERDTreeIgnore=['\.vim$', '\~$[[file]]', '^\.git$[[dir]]', '^vendor$[[dir]]', '\.pyc$[[file]]', '\.swp$']
 let NERDTreeShowHidden=1
+
+" " -------------------
+" " fzf
+" " -------------------
+" Path of the fzf git checkout (https://github.com/junegunn/fzf#as-vim-plugin)
+set rtp+=~/share/fzf
+
+" fzf + ripgrep (http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/)
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
+  \ -g "!{.git,node_modules,vendor}/*" '
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+
+" " -------------------
+" " Tagbar
+" " -------------------
+nmap <F4> :TagbarToggle<CR>
+
+" gotags (https://github.com/jstemmer/gotags)
+let g:tagbar_type_go = {
+  \ 'ctagstype' : 'go',
+  \ 'kinds'     : [
+    \ 'p:package',
+    \ 'i:imports:1',
+    \ 'c:constants',
+    \ 'v:variables',
+    \ 't:types',
+    \ 'n:interfaces',
+    \ 'w:fields',
+    \ 'e:embedded',
+    \ 'm:methods',
+    \ 'r:constructor',
+    \ 'f:functions'
+  \ ],
+  \ 'sro' : '.',
+  \ 'kind2scope' : {
+    \ 't' : 'ctype',
+    \ 'n' : 'ntype'
+  \ },
+  \ 'scope2kind' : {
+    \ 'ctype' : 't',
+    \ 'ntype' : 'n'
+  \ },
+  \ 'ctagsbin'  : 'gotags',
+  \ 'ctagsargs' : '-sort -silent'
+\ }

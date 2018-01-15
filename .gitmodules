@@ -4,9 +4,6 @@
 [submodule "bundle/diffchanges.vim"]
 	path = bundle/diffchanges.vim
 	url = https://github.com/vim-scripts/diffchanges.vim.git
-[submodule "bundle/FuzzyFinder"]
-	path = bundle/FuzzyFinder
-	url = https://github.com/vim-scripts/FuzzyFinder.git
 [submodule "bundle/L9"]
 	path = bundle/L9
 	url = https://github.com/vim-scripts/L9.git
@@ -22,9 +19,6 @@
 [submodule "bundle/Tagbar"]
 	path = bundle/Tagbar
 	url = https://github.com/vim-scripts/Tagbar.git
-[submodule "bundle/taglist.vim"]
-	path = bundle/taglist.vim
-	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "bundle/vim-bundler"]
 	path = bundle/vim-bundler
 	url = https://github.com/tpope/vim-bundler.git
@@ -94,3 +88,6 @@
 [submodule "bundle/jedi-vim"]
 	path = bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "bundle/fzf.vim"]
+	path = bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
