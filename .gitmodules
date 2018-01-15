@@ -1,6 +1,3 @@
-[submodule "bundle/bufexplorer.zip"]
-	path = bundle/bufexplorer.zip
-	url = https://github.com/vim-scripts/bufexplorer.zip.git
 [submodule "bundle/diffchanges.vim"]
 	path = bundle/diffchanges.vim
 	url = https://github.com/vim-scripts/diffchanges.vim.git
