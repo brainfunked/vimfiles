@@ -117,7 +117,7 @@ command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>),
 " " -------------------
 nmap <F4> :TagbarToggle<CR>
 
-" gotags (https://github.com/jstemmer/gotags)
+" Go support with gotags (https://github.com/jstemmer/gotags)
 let g:tagbar_type_go = {
   \ 'ctagstype' : 'go',
   \ 'kinds'     : [
@@ -145,3 +145,31 @@ let g:tagbar_type_go = {
   \ 'ctagsbin'  : 'gotags',
   \ 'ctagsargs' : '-sort -silent'
 \ }
+
+" Ruby support with or without ripper-tags (https://github.com/tmm1/ripper-tags)
+if executable('ripper-tags')
+  let g:tagbar_type_ruby = {
+      \ 'kinds'      : ['m:modules',
+                      \ 'c:classes',
+                      \ 'C:constants',
+                      \ 'F:singleton methods',
+                      \ 'f:methods',
+                      \ 'a:aliases'],
+      \ 'kind2scope' : { 'c' : 'class',
+                       \ 'm' : 'class' },
+      \ 'scope2kind' : { 'class' : 'c' },
+      \ 'ctagsbin'   : 'ripper-tags',
+      \ 'ctagsargs'  : ['-f', '-']
+      \ }
+else
+  let g:tagbar_type_ruby = {
+      \ 'kinds' : [
+          \ 'm:modules',
+          \ 'c:classes',
+          \ 'd:describes',
+          \ 'C:contexts',
+          \ 'f:methods',
+          \ 'F:singleton methods'
+      \ ]
+  \ }
+endif
