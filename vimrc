@@ -101,6 +101,9 @@ let NERDTreeShowHidden=1
 " (https://github.com/scrooloose/nerdtree/blob/master/README.markdown)
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Autorefresh NERDTree on buffer write
+" (https://superuser.com/questions/1141994/autorefresh-nerdtree)
+" autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
 
 " " -------------------
 " " fzf
@@ -163,7 +166,7 @@ if executable('ripper-tags')
                        \ 'm' : 'class' },
       \ 'scope2kind' : { 'class' : 'c' },
       \ 'ctagsbin'   : 'ripper-tags',
-      \ 'ctagsargs'  : ['-f', '-']
+      \ 'ctagsargs'  : ['-n', '-f', '-']
       \ }
 else
   let g:tagbar_type_ruby = {
