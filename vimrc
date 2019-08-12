@@ -1,15 +1,13 @@
 " Load pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+"runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+"call pathogen#helptags()
 
 " General
 set nocompatible
 filetype on
 filetype plugin on
 filetype indent on
-
-" Load plugins
-call pathogen#infect()
-call pathogen#helptags()
 
 " Theme/Colours
 syntax on
