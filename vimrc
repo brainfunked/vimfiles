@@ -103,19 +103,19 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " (https://superuser.com/questions/1141994/autorefresh-nerdtree)
 " autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
 
-" " -------------------
-" " fzf
-" " -------------------
-" Path of the fzf git checkout (https://github.com/junegunn/fzf#as-vim-plugin)
-set rtp+=~/share/fzf
-
-" fzf + ripgrep (http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/)
-let g:rg_command = '
-  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
-  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
-  \ -g "!{.git,node_modules,vendor}/*" '
-
-command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+"" " -------------------
+"" " fzf
+"" " -------------------
+"" Path of the fzf git checkout (https://github.com/junegunn/fzf#as-vim-plugin)
+"set rtp+=~/share/fzf
+"
+"" fzf + ripgrep (http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/)
+"let g:rg_command = '
+"  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+"  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
+"  \ -g "!{.git,node_modules,vendor}/*" '
+"
+"command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
 " " -------------------
 " " Tagbar
