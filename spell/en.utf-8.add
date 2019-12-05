@@ -13,5 +13,13 @@ ELFs
 rpm
 XML
 repomd
-RPM's
+RPMs
 x86_64
+parsable
+Hadoop
+redis
+hostname
+Tendrl
+datastore
+datatype
+SDS
