@@ -5,6 +5,7 @@ execute pathogen#infect()
 
 " General
 set nocompatible
+set guicursor=
 filetype on
 filetype plugin on
 filetype indent on
