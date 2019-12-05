@@ -193,3 +193,8 @@ let g:tagbar_type_asciidoc = {
     \ ],
     \ 'sort' : 0
 \ }
+
+" " -------------------
+" " ansible-vim
+" " -------------------
+let g:ansible_unindent_after_newline = 1
