@@ -199,3 +199,24 @@ let g:tagbar_type_asciidoc = {
 " " ansible-vim
 " " -------------------
 let g:ansible_unindent_after_newline = 1
+
+" " -------------------
+" " vim-go
+" " -------------------
+" https://github.com/fatih/vim-go/wiki/Tutorial
+let g:go_fmt_command = "goimports"
+" Syntax highlighting
+let g:go_highlight_types = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+" Switching between code and test files using ex commands
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+" Automatically show function signature (:GoInfo)
+let g:go_auto_type_info = 1
+" Automatically highlight matching identifiers (:GoSameIds)
+let g:go_auto_sameids = 1
