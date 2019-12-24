@@ -220,3 +220,18 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 let g:go_auto_type_info = 1
 " Automatically highlight matching identifiers (:GoSameIds)
 let g:go_auto_sameids = 1
+
+" " -------------------
+" " depolete
+" " -------------------
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+" Use TAB for autocompletion https://github.com/Shougo/deoplete.nvim/issues/816#issuecomment-409119635
+function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ deoplete#manual_complete()
