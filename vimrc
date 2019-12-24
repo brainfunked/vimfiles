@@ -9,6 +9,8 @@ set guicursor=
 filetype on
 filetype plugin on
 filetype indent on
+" faster refreshes for gitgutter and the like
+set updatetime=100
 
 " Theme/Colours
 syntax on
@@ -46,9 +48,6 @@ set expandtab "spaces for tabs
 
 " manpage viewing in Vim
 runtime ftplugin/man.vim
-
-" latexSuite plugin
-set grepprg=grep\ -nH\ $*
 
 " Tab completion
 set wildmode=list:longest,list:full
