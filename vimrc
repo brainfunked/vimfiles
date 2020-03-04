@@ -28,7 +28,7 @@ set showmatch "Show matching brackets
 set mat=5
 set incsearch
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+"set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2 
 set hlsearch
 set cursorline
@@ -235,3 +235,12 @@ inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
   \ <SID>check_back_space() ? "\<TAB>" :
   \ deoplete#manual_complete()
+
+" " -------------------
+" " airline
+" " -------------------
+" Display buffer list when only one tab is open
+let g:airline#extensions#tabline#enabled = 1
+function! s:tagbar_integration()
+  " statusline tells you what function you're in!
+endfunction
