@@ -240,6 +240,11 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 let g:go_auto_type_info = 1
 " Automatically highlight matching identifiers (:GoSameIds)
 let g:go_auto_sameids = 1
+" https://github.com/golang/tools/blob/master/gopls/doc/vim.md
+"let g:go_def_mode = 'gopls'
+"let g:go_info_mode = 'gopls'
+" Enable go code completion with omnifunc (default enabled anyway)
+"let g:go_code_completion_enabled = 1
 
 " " -------------------
 " " depolete
