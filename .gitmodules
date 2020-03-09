@@ -31,9 +31,6 @@
 [submodule "bundle/vim-eunuch"]
 	path = bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
-[submodule "bundle/VimExplorer"]
-	path = bundle/VimExplorer
-	url = https://github.com/vim-scripts/VimExplorer.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -43,9 +40,6 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
-[submodule "bundle/vim-rails"]
-	path = bundle/vim-rails
-	url = https://github.com/tpope/vim-rails.git
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
@@ -55,9 +49,6 @@
 [submodule "bundle/vim-textobj-user"]
 	path = bundle/vim-textobj-user
 	url = https://github.com/kana/vim-textobj-user.git
-[submodule "bundle/vim-vividchalk"]
-	path = bundle/vim-vividchalk
-	url = https://github.com/tpope/vim-vividchalk.git
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
@@ -67,15 +58,9 @@
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = https://github.com/vim-scripts/ack.vim.git
-[submodule "bundle/vim-yardoc"]
-	path = bundle/vim-yardoc
-	url = https://github.com/noprompt/vim-yardoc.git
 [submodule "bundle/vim-asciidoc"]
 	path = bundle/vim-asciidoc
 	url = https://github.com/gavinheavyside/vim-asciidoc
-[submodule "bundle/vim-puppet"]
-	path = bundle/vim-puppet
-	url = https://github.com/rodjek/vim-puppet.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
