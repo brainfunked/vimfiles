@@ -104,21 +104,13 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
 
 " -------------------
-" fzf + ripgrep
+" fzf
 " -------------------
 "" rtp not needed because installation is via pathogen
 "" Path of the fzf git checkout (https://github.com/junegunn/fzf#as-vim-plugin)
 "set rtp+=~/share/fzf
 
-"" fzf + ripgrep (http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/)
-"let g:rg_command = '
-"  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
-"  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
-"  \ -g "!{.git,node_modules,vendor}/*" '
-"
-"command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
-
-" https://jesseleite.com/posts/2/its-dangerous-to-vim-alone-take-fzf
+"" https://jesseleite.com/posts/2/its-dangerous-to-vim-alone-take-fzf
 " Files tracked by git
 nmap <Leader>f :GFiles<CR>
 " All files
@@ -131,6 +123,19 @@ nmap <Leader>h :History<CR>
 nmap <Leader>t :BTags<CR>
 " Tags in the project
 nmap <Leader>T :Tags<CR>
+
+" -------------------
+" fzf + ripgrep
+" -------------------
+"" https://sidneyliebrand.io/blog/how-fzf-and-ripgrep-improved-my-workflow
+" File contents using ripgrep
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+  \   <bang>0)
+nmap <Leader>c :Rg<CR>
 
 
 " " -------------------
