@@ -101,3 +101,9 @@
 [submodule "bundle/yaml-vim"]
 	path = bundle/yaml-vim
 	url = https://github.com/mrk21/yaml-vim.git
+[submodule "bundle/deoplete-ternjs"]
+	path = bundle/deoplete-ternjs
+	url = https://github.com/carlitux/deoplete-ternjs.git
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
