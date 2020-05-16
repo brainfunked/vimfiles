@@ -11,6 +11,8 @@ filetype plugin on
 filetype indent on
 " faster refreshes for gitgutter and the like
 set updatetime=100
+" Quit using ctrl+x
+nmap <C-x> :q<CR>
 
 " Theme/Colours
 syntax on
