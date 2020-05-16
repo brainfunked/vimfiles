@@ -67,6 +67,9 @@ set diffopt+=vertical
 " Python
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
+" YAML
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+
 " Configuration for various plugins
 " http://vim.wikia.com/wiki/Using_vim_as_an_IDE_all_in_one
 " --------------------
