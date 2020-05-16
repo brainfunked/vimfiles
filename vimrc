@@ -50,8 +50,8 @@ set expandtab "spaces for tabs
 runtime ftplugin/man.vim
 
 " Tab completion
-set wildmode=list:longest,list:full
-set complete=.,w,t
+"set wildmode=list:longest,list:full
+"set complete=.,w,t
 
 " Spell check plugin for vim 7
 "setlocal spell spelllang=en_gb
@@ -254,14 +254,14 @@ let g:deoplete#enable_at_startup = 1
 "" Real-time completion with gopls
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 "" Use TAB for autocompletion https://github.com/Shougo/deoplete.nvim/issues/816#issuecomment-409119635
-"function! s:check_back_space() abort "{{{
-"  let col = col('.') - 1
-"  return !col || getline('.')[col - 1]  =~ '\s'
-"endfunction"}}}
-"inoremap <silent><expr> <TAB>
-"  \ pumvisible() ? "\<C-n>" :
-"  \ <SID>check_back_space() ? "\<TAB>" :
-"  \ deoplete#manual_complete()
+function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ deoplete#manual_complete()
 
 " " -------------------
 " " airline
